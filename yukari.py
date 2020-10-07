@@ -843,12 +843,6 @@ async def on_message(message): # manually implementing the chuchu commands where
         msg = HELP_MSG.format(message)
         await message.channel.send(msg)
         
-    if message.author.id == 744768152201854987:
-        embeds = message.embeds # return list of embeds
-    for embed in embeds:
-        print(embed.to_dict()) # it's content of embed in dict
-        
-        
         #print (message.embeds)
 
 @client.event
