@@ -10,20 +10,15 @@ from shutil import rmtree
 import re
 import urllib
 
-
-
 import json
 import sys
 from pathlib import Path
 
 TOKEN = 'abc123'
 
-
 client = commands.Bot(command_prefix='-')
 
-
-
-ALL_COMMANDS = "-ping\n-fu\n-as\nhelp"
+ALL_COMMANDS = "```-ping\n-fu\n-as\n-help```"
 
 @client.command()
 @commands.is_owner()
@@ -71,7 +66,7 @@ async def on_message(message):
         msg = "Energy Ball".format(message)
         await message.channel.send(msg)
 
-    if message.content.startswith('-help'):
+    if message.content  == ('-help'):
         print(message.guild,":", message.channel)
         print(message.author)
         print(message.content)
@@ -79,8 +74,7 @@ async def on_message(message):
         msg = ALL_COMMANDS.format(message)
         await message.channel.send(msg)
         
-
-
+        
 @client.event
 async def on_ready():
     print('Logged in as')
